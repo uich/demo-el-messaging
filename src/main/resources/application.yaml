@@ -1,0 +1,15 @@
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:SS.SSS
+
+---
+spring:
+  profiles: producer
+server:
+    port: 8080
+
+---
+spring:
+  profiles: consumer
+server:
+    port: 8181

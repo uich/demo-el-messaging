@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration>
+<configuration scan="true">
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>%date{HH:mm:ss.SSS} [%logger{30}] %message%n</Pattern>
+		</encoder>
+	</appender>
+
+	<root>
+		<level value="info" />
+		<appender-ref ref="STDOUT" />
+	</root>
+
+	<logger name="jp.uich">
+		<level value="debug" />
+	</logger>
+
+</configuration>
