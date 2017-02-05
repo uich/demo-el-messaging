@@ -33,7 +33,7 @@ public class SpelUtils {
    * @param args SpEL上で実行するメソッドに渡す引数
    * @return {@link ELExpression}
    */
-  public static ELExpression createELContext(String beanNameForExecuting, Method method, Object[] args) {
+  public static ELExpression createELExpression(String beanNameForExecuting, Method method, Object[] args) {
     if (ArrayUtils.isEmpty(args)) {
       // 引数が無ければシンプルに構成する
       return ELExpression.builder()

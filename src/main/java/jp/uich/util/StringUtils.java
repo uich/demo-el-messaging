@@ -16,6 +16,7 @@ public class StringUtils {
   private static ObjectMapper objectMapper = Jackson2ObjectMapperBuilder.json()
     .indentOutput(true)
     .simpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
+    .timeZone("Asia/Tokyo")
     .build()
     .setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);
 

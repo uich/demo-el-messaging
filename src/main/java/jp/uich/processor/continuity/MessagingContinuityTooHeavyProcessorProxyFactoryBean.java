@@ -37,7 +37,7 @@ public class MessagingContinuityTooHeavyProcessorProxyFactoryBean
   public void afterPropertiesSet() {
     this.proxy = (ContinuityTooHeavyProcessor) Proxy.newProxyInstance(ClassUtils.getDefaultClassLoader(),
       new Class[] { this.type }, (bean, method, args) -> {
-        ELExpression el = SpelUtils.createELContext(this.beanName, method, args);
+        ELExpression el = SpelUtils.createELExpression(this.beanName, method, args);
 
         ELRecorder.record(el);
 

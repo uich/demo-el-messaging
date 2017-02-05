@@ -33,7 +33,7 @@ public class MessagingTooHeavyProcessorProxyFactoryBean implements FactoryBean<T
   public void afterPropertiesSet() {
     this.proxy = (TooHeavyProcessor) Proxy.newProxyInstance(ClassUtils.getDefaultClassLoader(),
       new Class[] { this.type }, (bean, method, args) -> {
-        ELExpression el = SpelUtils.createELContext(this.beanName, method, args);
+        ELExpression el = SpelUtils.createELExpression(this.beanName, method, args);
 
         log.info("{}", StringUtils.toString(el));
 
@@ -43,7 +43,7 @@ public class MessagingTooHeavyProcessorProxyFactoryBean implements FactoryBean<T
   }
 
   @Override
-  public TooHeavyProcessor getObject() throws Exception {
+  public TooHeavyProcessor getObject() {
     return this.proxy;
   }
 

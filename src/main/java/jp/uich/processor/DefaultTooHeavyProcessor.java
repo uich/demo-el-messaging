@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j(topic = "結果")
 public class DefaultTooHeavyProcessor implements TooHeavyProcessor {
 
-  private static final FastDateFormat FORMATTER = FastDateFormat.getInstance("yyyy-MM-dd HH:MM:ss.SSS");
+  private static final FastDateFormat FORMATTER = FastDateFormat.getInstance("yyyy-MM-dd HH:mm:ss.SSS");
 
   @Override
   public void action(User user, Item item, Date date) {
